@@ -1,0 +1,32 @@
+include includes/head.pug
+include ./includes/navBar.pug
+section.hero.is-primary.is-fullheight-with-navbar
+  .hero-body
+    .container
+      .columns.is-centered
+        .column.is-5-tablet.is-4-desktop.is-3-widescreen
+          form.box(action='/api/user/login' method='POST')
+            include ./includes/messages.pug
+            .field
+              label.label(for='email') Email
+              .control.has-icons-left
+                input.input(type='email'  name='email' id='email' placeholder='exemple@gmail.com' value= typeof email != 'undefined' ? email : ''  required)
+                span.icon.is-small.is-left
+                  i.fa.fa-envelope
+            .field
+              label.label(for='password') Mot de passe
+              .control.has-icons-left
+                input.input(type='password' name='password' id='password' placeholder='*******' value= typeof password != 'undefined' ? password : '' required)
+                span.icon.is-small.is-left
+                  i.fa.fa-lock
+            .field
+              p.has-text-centered
+                button.button.is-primary Se connecter
+
+include includes/footer.pug
+
+
+
+
+
+

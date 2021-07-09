@@ -1,0 +1,50 @@
+nav.navbar
+  .navbar-brand
+    a.navbar-item(href='/')
+      img(src='/images/epitech.png')
+    .navbar-burger.burger(data-target='navMenubd-example')
+      span
+      span
+      span
+  #navMenubd-example.navbar-menu
+    if (user)
+      .navbar-start
+        a.navbar-item(href='/businessCard')
+          span
+            i.fa.fa-id-card
+          span &nbsp; Cartes de visite
+        a.navbar-item(href='/businessCard/addBusinessCard')
+          span 
+            i.fa.fa-plus
+          span &nbsp; Ajouter
+        a.navbar-item(href='/businessCard/savedBusinessCard')
+          span 
+            i.fa.fa-bookmark
+          span &nbsp; Bibliothèque
+    .navbar-end
+      if (!user)
+        .navbar-item
+          .field.is-grouped
+            p.control
+              a.button.is-info(href='/login')
+                span.icon
+                  i.fa.fa-user
+                span Connexion
+            p.control
+              a.button.is-primary(href='/register')
+                span.icon
+                  i.fa.fa-download
+                span Inscription
+      if (user)         
+        .navbar-item
+          .field.is-grouped
+            p.control
+              a.button.is-info(href=`/api/user/${user.id}`)
+                span.icon
+                  i.fa.fa-user
+                span Profil
+            p.control
+              a.button.is-primary(href='/api/user/logout')
+                span.icon
+                  i.fa.fa-download
+                span Déconnexion

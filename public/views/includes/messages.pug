@@ -1,0 +1,10 @@
+if (errors) 
+  div(class="notification is-warning")
+    button(class="delete is-small")
+    each error, key in errors
+      p(id="#{key}") #{error}
+
+if (businessCard) 
+  div(class="notification is-success")
+    button(class="delete is-small")
+    p Carte de visite ajoutée
